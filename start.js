@@ -2,6 +2,8 @@ const loadBtn = document.getElementById("loadBtn");
 const loadBtn2 = document.getElementById("loadBtn2");
 const row = document.getElementById("row");
 const searchQuery = document.getElementById("searchQuery");
+const modal = document.getElementById("modal");
+const modalBody = document.getElementById("modalBody");
 
 const fetchImg = (query) => {
   fetch("https://api.pexels.com/v1/search?query=" + query, {
@@ -40,6 +42,10 @@ const fetchImg = (query) => {
         h5.classList.add("card-title");
         h5.innerText = img.photographer;
 
+        h5.addEventListener("click", (event) => {
+          window.location.assign("./detail.html?pexelId=" + img.id);
+        });
+
         const p = document.createElement("p");
         p.classList.add("card-text");
         p.innerText = img.alt;
@@ -54,6 +60,15 @@ const fetchImg = (query) => {
         btnView.classList.add("btn", "btn-sm", "btn-outline-secondary");
         btnView.setAttribute("type", "button");
         btnView.innerText = "View";
+        btnView.setAttribute("data-bs-toggle", "#modal");
+
+        btnView.addEventListener("click", () => {
+          modalBody.innerHTML = "";
+          const modalImg = document.createElement("img");
+          modalImg.setAttribute("src", img.src.tiny);
+          modalBody.appendChild(modalImg);
+          console.log(modalBody);
+        });
 
         const btnHide = document.createElement("button");
         btnHide.classList.add("btn", "btn-sm", "btn-outline-secondary");
