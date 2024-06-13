@@ -1,5 +1,7 @@
 const loadBtn = document.getElementById("loadBtn");
+const loadBtn2 = document.getElementById("loadBtn2");
 const row = document.getElementById("row");
+const container = document.getElementById("container");
 
 const fetchImg = () => {
   fetch("https://api.pexels.com/v1/search?query=beach", {
@@ -17,9 +19,7 @@ const fetchImg = () => {
     .then((imgObj) => {
       console.log("imgObj", imgObj);
 
-      const photos = imgObj.photos;
-
-      photos.forEach((img) => {
+      imgObj.photos.forEach((img) => {
         const col = document.createElement("div");
         col.classList.add("col-md-4");
         const card = document.createElement("div");
@@ -72,9 +72,29 @@ const fetchImg = () => {
         col.appendChild(card);
         row.appendChild(col);
       });
-    });
+    })
+    .catch((error) => console.log(error));
+};
+
+const fetchImg2 = () => {
+  fetch("https://api.pexels.com/v1/search?query=mountain", {
+    method: "GET",
+    headers: { Authorization: "QdjyaWGnzsPWwNMyaSGbDR4z0ZIZ6tY2WIijaotxKtYiyTs7jXn8qNe5" },
+  }).then((respond) => {
+    if (respond.ok) {
+      // console.log(respond);
+      return respond.json();
+    } else {
+      throw Error("Dati non ricevuti");
+    }
+  });
 };
 
 loadBtn.addEventListener("click", (event) => {
   fetchImg();
+});
+
+loadBtn2.addEventListener("click", (event) => {
+  fetchImg2();
+  container.innerHTML = "";
 });
