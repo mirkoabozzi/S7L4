@@ -125,6 +125,7 @@
           <h1 class="jumbotron-heading">Album API example</h1>
           <p class="lead text-muted">This page will dynamically load pictures from the web, and display them in a cool way!</p>
           <p>
+            <input id="searchQuery" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <a id="loadBtn" href="#" class="btn btn-primary my-2">Load Images</a>
             <a id="loadBtn2" href="#" class="btn btn-secondary my-2">Load Secondary Images</a>
           </p>
@@ -133,25 +134,9 @@
       <div class="album py-5 bg-light">
         <div id="container" class="container">
           <div id="row" class="row">
-            <!-- <div class="col-md-4">
+            <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img src="https://picsum.photos/id/237/300/200" class="bd-placeholder-img card-img-top" />
-                <div class="card-body">
-                  <h5 class="card-title">Lorem Ipsum</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img src="https://picsum.photos/id/237/300/200" class="bd-placeholder-img card-img-top" />
+                <img src="https://placehold.co/600x400" class="bd-placeholder-img card-img-top" />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -167,7 +152,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img src="https://picsum.photos/id/237/300/200" class="bd-placeholder-img card-img-top" />
+                <img src="https://placehold.co/600x400" class="bd-placeholder-img card-img-top" />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -183,7 +168,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img src="https://picsum.photos/id/237/300/200" class="bd-placeholder-img card-img-top" />
+                <img src="https://placehold.co/600x400" class="bd-placeholder-img card-img-top" />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -199,7 +184,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img src="https://picsum.photos/id/237/300/200" class="bd-placeholder-img card-img-top" />
+                <img src="https://placehold.co/600x400" class="bd-placeholder-img card-img-top" />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -215,7 +200,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img src="https://picsum.photos/id/237/300/200" class="bd-placeholder-img card-img-top" />
+                <img src="https://placehold.co/600x400" class="bd-placeholder-img card-img-top" />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -231,7 +216,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img src="https://picsum.photos/id/237/300/200" class="bd-placeholder-img card-img-top" />
+                <img src="https://placehold.co/600x400" class="bd-placeholder-img card-img-top" />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -247,7 +232,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img src="https://picsum.photos/id/237/300/200" class="bd-placeholder-img card-img-top" />
+                <img src="https://placehold.co/600x400" class="bd-placeholder-img card-img-top" />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -263,7 +248,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img src="https://picsum.photos/id/237/300/200" class="bd-placeholder-img card-img-top" />
+                <img src="https://placehold.co/600x400" class="bd-placeholder-img card-img-top" />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -276,7 +261,23 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img src="https://placehold.co/600x400" class="bd-placeholder-img card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">Lorem Ipsum</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
